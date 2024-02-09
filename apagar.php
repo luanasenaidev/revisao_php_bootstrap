@@ -24,13 +24,13 @@ if (!empty($id)) {
         // Executar a query para deletar o endereco associado ao usuário
         if ($del_endereco->execute()){
             // Se ambos, usuário e endereço, forem deletados com sucesso,retornar uma mensagem de sucesso
-            $retorna = ['status' => true, 'msg' => "<div class='alert alert-sucess' role='alert' >Usuário apagado com sucesso!</div>"];
+            $retorna = ['status' => true, 'msg' => "<div class='alert alert-sucess' role='alert'>Usuário apagado com sucesso!</div>"];
         } else {
             // Se o usuário for deletado, mas o endereço não, retornar uma mensagem de erro
             $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert' >Erro: Usuário apagado, endereço não apagado com sucesso!</div>"];
         }
     } else {
-        // Se houver ummerro ao deletar o usuário, retornar uma mensagem de erro
+        // Se houver um numero ao deletar o usuário, retornar uma mensagem de erro
         $retorna = ['status' => false, 'msg' => "<div class='alert alert-danger' role='alert' >Erro: Usuário apagado, endereço não apagado com sucesso!</div>"];
     }
 } else {
@@ -40,3 +40,4 @@ if (!empty($id)) {
 
 // Retornar o resultado em formato JSON
 echo json_encode($retorna);
+
